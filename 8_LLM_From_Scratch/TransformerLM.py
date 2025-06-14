@@ -1,9 +1,9 @@
 import torch
 import torch.nn as nn
-from cs336_basics.embedding import Embedding
-from cs336_basics.TransformerBlock import TransformerBlock
-from cs336_basics.RMSNorm import RMSNorm
-from cs336_basics.linear import Linear
+from embedding import Embedding
+from TransformerBlock import TransformerBlock
+from RMSNorm import RMSNorm
+from linear import Linear
 
 class TransformerLM(nn.Module):
     def __init__(self, vocab_size: int, context_length: int, d_model: int, num_layers: int, num_heads: int, d_ff: int, theta: float = 10000.0, device: torch.device | None = None, dtype: torch.dtype | None = None):

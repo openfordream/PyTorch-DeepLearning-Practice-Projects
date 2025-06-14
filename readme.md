@@ -249,6 +249,7 @@ wget https://huggingface.co/datasets/roneneldan/TinyStories/resolve/main/TinySto
 - MultiHeadSelfAttention：多头自注意力机制
 - TransformerBlock: 完整的Transformer块
 - TransformerLM：完整的Transformer语言模型
+- AdamW：优化器
 
 
 ### 项目展示 

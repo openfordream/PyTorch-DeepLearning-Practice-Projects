@@ -2,9 +2,9 @@ import argparse
 import numpy as np
 import torch
 import torch.nn as nn
-from cs336_basics.AdamW import AdamW
-from cs336_basics.TransformerLM import TransformerLM
-from cs336_basics.tokenizer import Tokenizer
+from AdamW import AdamW
+from TransformerLM import TransformerLM
+from tokenizer import Tokenizer
 from function import data_loader, cross_entropy as loss_fn, nucleus_sampling_decoder, load_checkpoint
 
 tokenizer = Tokenizer.from_files(
