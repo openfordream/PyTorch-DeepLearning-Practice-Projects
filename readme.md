@@ -12,7 +12,8 @@
 - 2025-01-01: 新增项目3: 中文影评文本分类
 - 2025-02-28: 新增项目4: GAN 图像生成
 - 2025-03-19: 新增项目5: RL 贪吃蛇
-- 2025-04-02: 新增项目6: 对抗样本攻击(待优化)
+- 2025-04-02: 新增项目6: 对抗样本攻击
+- 2025-06-14: 新增项目8：从零开始的大语言模型
 
 ---
 
@@ -24,6 +25,7 @@
 4. [GAN-图像生成 (GAN Image Generation)](#4-GAN-图像生成-GAN-image-generation)
 5. [RL-贪吃蛇 (Reinforcement Learning Snake)](#5-RL-贪吃蛇-reinforcement-learning-snake)
 6. [对抗样本攻击 (Adversarial Attack)](#6-对抗样本攻击-adversarial-attack)
+8. [从零开始的大语言模型 (Large Language Model From scratch)](#8-从零开始的大语言模型-large-language-model-from-scratch)
 
 ---
 
@@ -217,6 +219,54 @@ PyTorch
 
 ---
 
+## 8. 从零开始的大语言模型 (Large Language Model From scratch)
+
+🤖💬
+### 🎯 项目概述
+从零开始实现的LLMs！手写 Transformer 所有组件，训练自己的大模型！  
+项目来自[Stanford CS 336](https://stanford-cs336.github.io/spring2025/) Assignment 1，具体原理和各部分细节参考课程官网。  
+课程作业质量很高，建议认真看完[作业PDF](https://github.com/stanford-cs336/assignment1-basics/blob/main/cs336_spring2025_assignment1_basics.pdf)。 
+
+数据集：
+```bash
+wget https://huggingface.co/datasets/roneneldan/TinyStories/resolve/main/TinyStoriesV2-GPT4-train.txt
+wget https://huggingface.co/datasets/roneneldan/TinyStories/resolve/main/TinyStoriesV2-GPT4-valid.txt
+```
+完整训练需要大量的时间和资源消耗，实测仅需要几分钟的模型训练就可以达成词语接龙（讲故事）的效果，如果资源有限可以只使用部分数据。  
+重点还是体验实现整个流程。
+
+架构图：
+![Transformer](./8_LLM_From_Scratch/data/transformer.png)  
+
+包括：
+- BPE：训练词汇编码器
+- Tokenizer：基于BPE的分词器，把文本转换为token(数字)序列
+- Linear: 线性层
+- Embedding: 词嵌入层
+- RMSNorm: 层归一化
+- SWiGLU：FFN层
+- RoPE：位置编码
+- MultiHeadSelfAttention：多头自注意力机制
+- TransformerBlock: 完整的Transformer块
+- TransformerLM：完整的Transformer语言模型
+
+
+### 项目展示 
+经过预训练的语言模型只会词语接龙，仅仅训练了几分钟就可以达到这个效果。
+![demo.png](./8_LLM_From_Scratch/data/demo.png)
+
+### 项目亮点 ✨ 
+- 真正从零实现的LLMs！（虽然并不Large）
+- 可以找自己感兴趣的数据集，训练定制化的模型
+
+### 待探究的问题 🔬
+- 用中文数据集训练支持中文的模型
+- 进行SFT让大模型能进行QA
+- 代码目前仅仅是能完整实现模型，但是效率很低，很多地方可以优化
+
+---
+
+scp zlh20v2:/data3/zlh/king/stanford_cs_336/assignment1-basics/cs336_basics/function.py ./8_LLM_From_Scratch
 
 ## ✨ 更多项目待续...
 - 中英文翻译  [基于Transformer的中英文翻译项目实战](https://www.heywhale.com/mw/project/614314778447b80017694844)
