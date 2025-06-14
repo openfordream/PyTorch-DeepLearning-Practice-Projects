@@ -266,8 +266,6 @@ wget https://huggingface.co/datasets/roneneldan/TinyStories/resolve/main/TinySto
 
 ---
 
-scp zlh20v2:/data3/zlh/king/stanford_cs_336/assignment1-basics/cs336_basics/function.py ./8_LLM_From_Scratch
-
 ## ✨ 更多项目待续...
 - 中英文翻译  [基于Transformer的中英文翻译项目实战](https://www.heywhale.com/mw/project/614314778447b80017694844)
 - 语音识别   
