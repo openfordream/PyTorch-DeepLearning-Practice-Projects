@@ -1,3 +1,11 @@
+
+
+pip install torch torchvision torchaudio
+
+pip install matplotlib
+
+
+
 # 🚀 PyTorch 深度学习实战教程 🚀
 
 欢迎来到 **PyTorch 深度学习实战教程**！🎉  
